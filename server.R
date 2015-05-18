@@ -25,8 +25,8 @@ shinyServer(function(input, output) {
       geom_density(fill = color(), colour = NA, alpha = .2) +
       geom_line(stat = 'density',  colour = color()) +
       scale_y_continuous(labels = percent) +
-      #ggtitle(title) +
-      #theme(plot.title = element_text(size = rel(2))) +
+      ggtitle(title) +
+      theme(plot.title = element_text(size = rel(2))) +
       xlab(x_label) +
       ylab(y_label)
 
@@ -35,5 +35,4 @@ shinyServer(function(input, output) {
   output$summaryText <- renderPrint({
     summary(diamonds[, var()])
   })
-
 })
