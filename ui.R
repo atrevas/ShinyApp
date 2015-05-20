@@ -14,7 +14,11 @@ shinyUI(
 
     , sidebarLayout(
         sidebarPanel(
-          helpText('This Shiny App allows you to visualize the variables from the Diamonds data set.')
+          helpText(
+            'This Shiny App allows you to visualize the variables from the Diamonds data set.'
+            , 'You should select a numeric variable and a categorical variable.'
+            , 'Then the app will plot the former grouped by the latter.'
+          )
           , selectInput('vnum', 'Select a numeric variable to plot:'
                         , choices = num_vars)
           , selectInput('vcat', 'Select a categorical variable:'
@@ -27,7 +31,6 @@ shinyUI(
           type = 'tabs'  
           , tabPanel('Density Plot', plotOutput('densityPlot'))
           ,  tabPanel('Box Plot', plotOutput('boxPlot'))
-          , tabPanel('Summary', tableOutput('summaryTable'))
           , tabPanel('Help',
             helpText
               (

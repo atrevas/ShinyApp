@@ -46,9 +46,5 @@ shinyServer(function(input, output) {
       ylab(y_label)
   })
   
-  output$summaryTable <- renderTable({
-    data.frame(Min = min(diamonds[, vnum()])
-               , Mean = mean(diamonds[, vnum()])
-               , Max = max(diamonds[, vnum()]))
-  })
+ 
 })
