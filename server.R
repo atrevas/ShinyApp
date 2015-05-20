@@ -16,7 +16,7 @@ shinyServer(function(input, output) {
   
   output$densityPlot <- renderPlot({
     x_label <- paste0(toupper(substring(vnum(), 1, 1)), substring(vnum(), 2))
-    title <- paste0('Density Curve - ', x_label, '\n')
+    title <- paste0('Kernel Density Plot - ', x_label, '\n')
     y_label <- 'Density'
     
     # It is necessary to use aes_string to manage variable names in the call

@@ -29,9 +29,13 @@ shinyUI(
     , mainPanel(
        tabsetPanel(
           type = 'tabs'  
-          , tabPanel('Density Plot', plotOutput('densityPlot'))
+          , tabPanel(
+              'Kernel Density Plot'
+              , plotOutput('densityPlot')
+              , helpText('A kernel density plot is an alternative to a histogram to visualize the underlying distribution of a continuous variable. Is is an estimate of the population distribution, based on the sample data. In the plot above, the categorical variable chosen is used as a grouping variable and mapped to the color aesthetic.')
+              )
           ,  tabPanel('Box Plot', plotOutput('boxPlot'))
-          , tabPanel('Help',
+          , tabPanel('Diamonds',
             helpText
               (
               h3('Prices of 50,000 round cut diamonds')
