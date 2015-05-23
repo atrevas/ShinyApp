@@ -46,5 +46,13 @@ shinyServer(function(input, output) {
       ylab(y_label)
   })
   
+  output$summaryText <- renderPrint({
+    summary(diamonds[, vnum()])  
+  })
+  
+  output$summary2Text <- renderPrint({
+    table(diamonds[, vcat()])  
+  })
+  
  
 })
