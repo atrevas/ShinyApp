@@ -18,10 +18,12 @@ shinyUI(
             'This shiny app allows you to visualize the variables from the Diamonds data set.'
             , 'You should select a numeric variable and a categorical variable.'
             , 'Then the app will plot the former grouped by the latter.'
+            , br()
+            , 'Two plots are available: a kernel density plot and a box plot.'
           )
           , selectInput('vnum', 'Select a numeric variable to plot:'
                         , choices = num_vars)
-          , selectInput('vcat', 'Select a categorical variable:'
+          , selectInput('vcat', 'Select a categorical variable to plot:'
                     , choices = fac_vars)
         )
     
