@@ -1,0 +1,54 @@
+Coursera Developing Data Products - Shiny Project
+========================================================
+author: André das Trevas
+date: May 24,2015
+
+Introduction
+========================================================
+
+For the Coursera Developing Data Products course project,
+I decided to build a simple Shiny app.
+This app uses the **diamonds** data set, which is available
+with the **ggplot2** R package. It allows the user to
+visualize two variable at a time: one numeric and one categorical.
+
+
+The diamonds data set
+========================================================
+
+The diamonds data set has the following variables:
+
+- price   - price in US dollars
+- carat   - weight of the diamond 
+- cut     - quality of the cut
+- colour  - diamond colour, from J (worst) to D (best)  
+- clarity - a measurement of how clear the diamond is (I1 (worst), SI1, SI2, VS1, VS2, VVS1, VVS2, IF (best))
+- x       - length in mm
+- y       - width in mm
+- z       - depth in mm
+- depth   - total depth percentage = z / mean(x, y) = 2 * z / (x + y)
+- table   - width of top of diamond relative to widest point
+
+A glimpse at the diamonds data set
+========================================================
+```{r, size = 'tiny'}
+library(ggplot2)
+head(diamonds[,c('price', 'carat', 'cut', 'color', 'clarity')])
+```
+
+Example plot
+========================================================
+```{r, echo = FALSE}
+library(ggplot2)
+
+ggplot(diamonds, aes(x = cut, y = price, fill = cut)) +
+      geom_boxplot() +
+      guides(fill=FALSE) +
+      ggtitle('Box Plot - Cut x Price\n') +
+      theme(plot.title = element_text(size = rel(2))) +
+      xlab('Cut')  +
+      ylab('Price')
+```
+
+
+
