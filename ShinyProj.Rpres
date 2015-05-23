@@ -22,7 +22,7 @@ The diamonds data set has the following variables:
 - carat   - weight of the diamond 
 - cut     - quality of the cut
 - colour  - diamond colour, from J (worst) to D (best)  
-- clarity - a measurement of how clear the diamond is (I1 (worst), SI1, SI2, VS1, VS2, VVS1, VVS2, IF (best))
+- clarity - a measurement of how clear the diamond is
 - x       - length in mm
 - y       - width in mm
 - z       - depth in mm
